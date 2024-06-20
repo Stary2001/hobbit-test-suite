@@ -1,0 +1,26 @@
+diff --git a/src/9vx/x11/x11-init.c b/src/9vx/x11/x11-init.c
+index a7db4d3..ac097ee 100755
+--- a/src/9vx/x11/x11-init.c
++++ b/src/9vx/x11/x11-init.c
+@@ -739,6 +739,8 @@ _xconfigure(XEvent *e)
+ 	return 1;
+ }
+ 
++extern void drawreplacescreenimage(Memimage *m);
++
+ int
+ _xreplacescreenimage(void)
+ {
+diff --git a/src/9vx/x11/x11-kernel.c b/src/9vx/x11/x11-kernel.c
+index 6df9fdd..0303dae 100755
+--- a/src/9vx/x11/x11-kernel.c
++++ b/src/9vx/x11/x11-kernel.c
+@@ -27,6 +27,8 @@ Rectangle windowrect;
+ Rectangle screenrect;
+ int fullscreen;
+ 
++extern void bye(int sig);
++
+ /*
+  * Handle an incoming X event.
+  */
