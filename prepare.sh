@@ -20,9 +20,11 @@ rmdir $iso_dir
 # Extract overlay
 mkdir 9/overlay
 
-FIRST_ED_FILES="plan9-1e/386/bin/za plan9-1e/386/bin/zc plan9-1e/386/bin/zl plan9-1e/hobbit plan9-1e/sys/include"
+FIRST_ED_FILES="plan9-1e/386/bin/za plan9-1e/386/bin/zc plan9-1e/386/bin/zl plan9-1e/hobbit plan9-1e/sys/include plan9-1e/lib/acid"
 tar xf plan9-1e.tar.bz2 -C 9/overlay --strip-components 1 $FIRST_ED_FILES
 cp plan9-run.sh 9/run.sh
+
+mkdir 9/lib/acid
 fi
 
 if [ ! -e vx32 ]; then
